@@ -10,6 +10,7 @@ maximum = 0
 minimum = 0
 difference = []
 
+
 with open(csvpath, newline="") as csvfile:
 
 # CSV reader specifies delimiter and variable that holds contents
@@ -18,17 +19,19 @@ with open(csvpath, newline="") as csvfile:
 
 # Read each row of data after the header
     for row in csvreader:
-        
+        Total_PnL = [row[1]]
 # The total number of months included in the dataset
         months +=1
 
 # The net total amount of "Profit/Losses" over the entire period
-        PnL += int(row[1])
-        # print(months)
-        # print(PnL)
+        PnL +=int(row[1])
+
+print(months)
+print(PnL)
+
 # The average of the changes in "Profit/Losses" over the entire period
-        average = PnL/len(row[1])
-        print(average)
+        # average = PnL/len(row[1])
+        # print(average)
 
 # The greatest increase in profits (date and amount) over the entire period
 
