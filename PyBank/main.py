@@ -8,8 +8,6 @@ PnL = 0
 months = 0
 maximum = 0
 minimum = 0
-changes = []
-
 
 with open(csvpath, newline="") as csvfile:
 
@@ -19,7 +17,7 @@ with open(csvpath, newline="") as csvfile:
 
 # Read each row of data after the header
     for row in csvreader:
-
+ 
 # The total number of months included in the dataset
         months +=1
 
@@ -28,16 +26,19 @@ with open(csvpath, newline="") as csvfile:
 
 # The average of the changes in "Profit/Losses" over the entire period
 # Use list comprehension
-        difference = [row[i+1] - row[i] for i in row]
+        # changes = []
+        # average = [row[i+1] - row[i] for i in row]
         # average = changes/len(row[1])
 
-
-print("Total months: " + str(months))
-print("Total: $" + str(PnL))
-# print("Average change: $" + str(average))
 
 # The greatest increase in profits (date and amount) over the entire period
 
 
 # The greatest decrease in losses (date and amount) over the entire period
 
+
+print("Total months: " + str(months))
+print("Total: $" + str(PnL))
+# print("Average change: $" + str(average))
+# print("Greatest increase in profits: " + )
+# print("Greatest decrease in profits: " + )
