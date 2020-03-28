@@ -54,7 +54,7 @@ print("Average change: $" + "{:.2f}".format(average))
 print("Greatest increase in profits: " + str(max_month) + " ($" + str(maximum) + ")")
 print("Greatest decrease in profits: " + str(min_month) + " ($" + str(minimum) + ")")
 
-output = os.path.join("..", "PyBankOut.txt")
+output = os.path.join("..", "PyBank", "PyBankOut.txt")
 with open(output, 'w') as file:
         file.write("Financial Analysis\n")
         file.write("-" * 30 + "\n")
