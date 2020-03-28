@@ -31,9 +31,9 @@ print("-" * 30)
 
 # The percentage of votes each candidate won
 # The total number of votes each candidate won
-
 total = sum(candidates.values())
 
+# Loop through the dictionary, print out the key (name) and the value (count)
 for name, vote in candidates.items():
          pct = vote * 100 / total
          pct_round = round(pct,3)
@@ -47,8 +47,6 @@ print("-" * 30)
 print("Winner: " + str(max_keys))
 print("-" * 30)
 
-# Loop through the dictionary, print out the key (name) and the value (count)
-
 
 output = os.path.join("..", "PyPoll", "PyPollOut.txt")
 with open(output, 'w') as file:
@@ -57,9 +55,7 @@ with open(output, 'w') as file:
         file.write("Total Votes: " + str(votes) + "\n")
         file.write("-" * 30 + "\n")
         for k, v in candidates.items():
-                file.write(str())
-        file.write("Total: $" + str(PnL) + "\n")
-        file.write("Total: $" + str(PnL) + "\n")
-        file.write("Average change: $" + "{:.2f}".format(average) + "\n")
-        file.write("Greatest increase in profits: " + str(max_month) + " ($" + str(maximum) + ")" + "\n")
-        file.write("Greatest decrease in profits: " + str(min_month) + " ($" + str(minimum) + ")")
+                file.write(str(k) + ": " + str(pct_round) + "% " + "(" + str(v) + ")" + "\n")
+        file.write("-" * 30 + "\n")
+        file.write("Winner: " + str(max_keys) + "\n")
+        file.write("-" * 30)
