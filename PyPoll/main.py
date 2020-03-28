@@ -40,27 +40,26 @@ for name, vote in candidates.items():
          print(str(name) + ": " + str(pct_round) + "% " + "(" + str(vote) + ")")
 
 # The winner of the election based on popular vote.
-def winner():
-        v = list(candidates.values())
-        k = list(candidates.key())
-        return k[v.index(max(v))]
+max_value = max(candidates.values())
+max_keys = [k for k, v in candidates.items() if v == max_value]
 
 print("-" * 30)
-print("Winner: ")
+print("Winner: " + str(max_keys))
 print("-" * 30)
-
-
 
 # Loop through the dictionary, print out the key (name) and the value (count)
 
 
-# output = os.path.join("..", "PyPoll", "PyPollOut.txt")
-# with open(output, 'w') as file:
-#         file.write("Election Results\n")
-#         file.write("-" * 30 + "\n")
-#         file.write("Total months: " + str(months) + "\n")
-#         file.write("Total: $" + str(PnL) + "\n")
-#         file.write("Total: $" + str(PnL) + "\n")
-#         file.write("Average change: $" + "{:.2f}".format(average) + "\n")
-#         file.write("Greatest increase in profits: " + str(max_month) + " ($" + str(maximum) + ")" + "\n")
-#         file.write("Greatest decrease in profits: " + str(min_month) + " ($" + str(minimum) + ")")
+output = os.path.join("..", "PyPoll", "PyPollOut.txt")
+with open(output, 'w') as file:
+        file.write("Election Results\n")
+        file.write("-" * 30 + "\n")
+        file.write("Total Votes: " + str(votes) + "\n")
+        file.write("-" * 30 + "\n")
+        for k, v in candidates.items():
+                file.write(str())
+        file.write("Total: $" + str(PnL) + "\n")
+        file.write("Total: $" + str(PnL) + "\n")
+        file.write("Average change: $" + "{:.2f}".format(average) + "\n")
+        file.write("Greatest increase in profits: " + str(max_month) + " ($" + str(maximum) + ")" + "\n")
+        file.write("Greatest decrease in profits: " + str(min_month) + " ($" + str(minimum) + ")")
